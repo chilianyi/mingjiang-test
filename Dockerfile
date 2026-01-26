@@ -1,5 +1,5 @@
 # Dockerfile
-FROM registry.cn-hangzhou.aliyuncs.com/library/alpine:latest
+FROM docker.mirrors.ustc.edu.cn/library/alpine:latest
 LABEL maintainer="your-team"
 RUN apk add --no-cache curl
 COPY . /app
