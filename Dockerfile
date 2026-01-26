@@ -1,5 +1,5 @@
 # Dockerfile
-FROM alpine:latest
+FROM registry.cn-hangzhou.aliyuncs.com/library/alpine:latest
 LABEL maintainer="your-team"
 RUN apk add --no-cache curl
 COPY . /app
