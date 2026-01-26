@@ -3,8 +3,22 @@ on:
   workflow_dispatch:
 
 jobs:
-  Explore-GitHub-Actions:
-    # You need to use the INSTALLATION_NAME from the previous step
-    runs-on: dx3-set1
+  debug:
+    runs-on: arc-runner-set5
+    env:
+      DOCKER_HOST: tcp://localhost:2375
+      DOCKER_TLS_VERIFY: "0"
+      DOCKER_CERT_PATH: ""
     steps:
-    - run: echo "🎉 This job uses runner scale set runners!"
+      - name: 🔍 Debug Docker Setup
+        run: |
+          echo "User: $(whoami)"
+          echo "HOME: $HOME"
+          echo "DOCKER_HOST: $DOCKER_HOST"
+          echo "DOCKER_TLS_VERIFY: $DOCKER_TLS_VERIFY"
+          echo "DOCKER_CERT_PATH: $DOCKER_CERT_PATH"
+          echo "Files in ～/.docker:"
+          ls -la ～/.docker || echo "No .docker dir"
+
+      - name: 🧪 Test Docker Connection
+        run: docker version
