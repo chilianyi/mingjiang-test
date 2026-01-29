@@ -10,7 +10,7 @@ on:
 jobs:
   test:
     # 关键：使用自托管 runner（由 gha-runner-scale-set 提供）
-    runs-on: arc-runner-set3
+    runs-on: arc-runner-set5
 
     steps:
       - name: Checkout code
