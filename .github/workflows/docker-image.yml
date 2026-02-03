@@ -1,7 +1,7 @@
 name: CI
 on:
-  push:
-    branches: [ main ]
+  pull_request:
+    branches: [ main ]   # 监听针对 main 分支的 PR
 jobs:
   container-test-job:
     runs-on: arc-runner-set20
